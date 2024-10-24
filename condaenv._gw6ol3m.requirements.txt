@@ -1,0 +1,3 @@
+git+https://github.com/facebookincubator/submitit
+--extra-index-url https://pypi.nvidia.com
+cuml-cu11
