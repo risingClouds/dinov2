@@ -1,0 +1,31 @@
+bme_gpu02
+Thu Oct 31 16:28:02 2024       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.54.15              Driver Version: 550.54.15      CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla V100S-PCIE-32GB          On  |   00000000:18:00.0 Off |                    0 |
+| N/A   33C    P0             28W /  250W |       0MiB /  32768MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+start on Thu Oct 31 16:28:02 CST 2024
+/public_bme/data/v-luotao/conda_envs/lt-dinov2/bin/python
+/home_data/home/v-luotao/projects/pretrain/dinov2/dinov2/layers/swiglu_ffn.py:43: UserWarning: xFormers is available (SwiGLU)
+  warnings.warn("xFormers is available (SwiGLU)")
+/home_data/home/v-luotao/projects/pretrain/dinov2/dinov2/layers/attention.py:27: UserWarning: xFormers is available (Attention)
+  warnings.warn("xFormers is available (Attention)")
+/home_data/home/v-luotao/projects/pretrain/dinov2/dinov2/layers/block.py:33: UserWarning: xFormers is available (Block)
+  warnings.warn("xFormers is available (Block)")
+I20241031 16:29:51 185372 dinov2 submit.py:120] Submitted job_id: 2958094
+I20241031 16:29:51 185372 dinov2 submit.py:122] Logs and checkpoints will be saved at: /home_data/home/v-luotao/projects/pretrain/dinov2/output/vitb14_panoramic

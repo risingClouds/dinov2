@@ -26,9 +26,9 @@ class _Split(Enum):
     @property
     def length(self) -> int:
         split_lengths = {
-            _Split.TRAIN: 1_281_167,
-            _Split.VAL: 50_000,
-            _Split.TEST: 100_000,
+            _Split.TRAIN: 7720,
+            _Split.VAL: 1535,
+            _Split.TEST: 1535,
         }
         return split_lengths[self]
 
@@ -41,7 +41,7 @@ class _Split(Enum):
             basename = f"{class_id}_{actual_index}"
         else:  # self in (_Split.VAL, _Split.TEST):
             basename = f"ILSVRC2012_{self.value}_{actual_index:08d}"
-        return os.path.join(dirname, basename + ".JPEG")
+        return os.path.join(dirname, basename + ".jpg")
 
     def parse_image_relpath(self, image_relpath: str) -> Tuple[str, int]:
         assert self != _Split.TEST

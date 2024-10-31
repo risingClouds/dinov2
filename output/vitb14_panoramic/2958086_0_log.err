@@ -1,0 +1,43 @@
+/home_data/home/v-luotao/projects/pretrain/dinov2/dinov2/layers/swiglu_ffn.py:43: UserWarning: xFormers is available (SwiGLU)
+  warnings.warn("xFormers is available (SwiGLU)")
+/home_data/home/v-luotao/projects/pretrain/dinov2/dinov2/layers/attention.py:27: UserWarning: xFormers is available (Attention)
+  warnings.warn("xFormers is available (Attention)")
+/home_data/home/v-luotao/projects/pretrain/dinov2/dinov2/layers/block.py:33: UserWarning: xFormers is available (Block)
+  warnings.warn("xFormers is available (Block)")
+submitit ERROR (2024-10-31 16:17:05,029) - Submitted job triggered an exception
+Traceback (most recent call last):
+  File "/public_bme/data/v-luotao/conda_envs/lt-dinov2/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/public_bme/data/v-luotao/conda_envs/lt-dinov2/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/public_bme/data/v-luotao/conda_envs/lt-dinov2/lib/python3.10/site-packages/submitit/core/_submit.py", line 11, in <module>
+    submitit_main()
+  File "/public_bme/data/v-luotao/conda_envs/lt-dinov2/lib/python3.10/site-packages/submitit/core/submission.py", line 76, in submitit_main
+    process_job(args.folder)
+  File "/public_bme/data/v-luotao/conda_envs/lt-dinov2/lib/python3.10/site-packages/submitit/core/submission.py", line 69, in process_job
+    raise error
+  File "/public_bme/data/v-luotao/conda_envs/lt-dinov2/lib/python3.10/site-packages/submitit/core/submission.py", line 55, in process_job
+    result = delayed.result()
+  File "/public_bme/data/v-luotao/conda_envs/lt-dinov2/lib/python3.10/site-packages/submitit/core/utils.py", line 137, in result
+    self._result = self.function(*self.args, **self.kwargs)
+  File "/home_data/home/v-luotao/projects/pretrain/dinov2/dinov2/run/train/train.py", line 26, in __call__
+    train_main(self.args)
+  File "/home_data/home/v-luotao/projects/pretrain/dinov2/dinov2/train/train.py", line 313, in main
+    do_train(cfg, model, resume=not args.no_resume)
+  File "/home_data/home/v-luotao/projects/pretrain/dinov2/dinov2/train/train.py", line 245, in do_train
+    loss_dict = model.forward_backward(data, teacher_temp=teacher_temp)
+  File "/home_data/home/v-luotao/projects/pretrain/dinov2/dinov2/train/ssl_meta_arch.py", line 342, in forward_backward
+    self.backprop_loss(loss_accumulator)
+  File "/home_data/home/v-luotao/projects/pretrain/dinov2/dinov2/train/ssl_meta_arch.py", line 128, in backprop_loss
+    self.fp16_scaler.scale(loss).backward()
+  File "/public_bme/data/v-luotao/conda_envs/lt-dinov2/lib/python3.10/site-packages/torch/_tensor.py", line 487, in backward
+    torch.autograd.backward(
+  File "/public_bme/data/v-luotao/conda_envs/lt-dinov2/lib/python3.10/site-packages/torch/autograd/__init__.py", line 200, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/public_bme/data/v-luotao/conda_envs/lt-dinov2/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 213287) is killed by signal: Killed. 
+slurmstepd: error: Detected 57 oom-kill event(s) in step 2958086.0 cgroup. Some of your processes may have been killed by the cgroup out-of-memory handler.
+srun: error: bme_gpu01: task 0: Out Of Memory
+srun: Terminating job step 2958086.0
+slurmstepd: error: Detected 4 oom-kill event(s) in step 2958086.batch cgroup. Some of your processes may have been killed by the cgroup out-of-memory handler.

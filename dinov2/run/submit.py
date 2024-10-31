@@ -55,7 +55,7 @@ def get_args_parser(
         help="Duration of the job",
     )
     parser.add_argument(
-        "--partition",
+        "--partition",       
         default=slurm_partition,
         type=str,
         help="Partition where to submit",

@@ -1,0 +1,1 @@
+/home_data/home/v-luotao/projects/pretrain/dinov2/output/vitb14_panoramic/2958094_submission.sh
